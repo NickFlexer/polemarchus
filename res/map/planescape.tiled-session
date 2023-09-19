@@ -1,0 +1,59 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "map_01.tmx",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "Autotile_Dirt.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Tileset.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "map_01.tmx": {
+            "scale": 1.6189583333333333,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 142.99317977094327,
+                "y": 164.9208596062283
+            }
+        },
+        "map_01.tmx#Autotile_Dirt": {
+            "scaleInDock": 1
+        },
+        "map_01.tmx#Tileset": {
+            "scaleInDock": 1
+        }
+    },
+    "last.exportedFilePath": "/Users/nikolaykomarov/code/love/polemarchus/res/map",
+    "last.imagePath": "/Users/nikolaykomarov/code/love/polemarchus/res/map/tileset",
+    "map.lastUsedExportFilter": "Lua files (*.lua)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "openFiles": [
+        "Autotile_Dirt.tsx",
+        "Tileset.tsx",
+        "map_01.tmx"
+    ],
+    "project": "planescape.tiled-project",
+    "recentFiles": [
+        "Autotile_Dirt.tsx",
+        "Tileset.tsx",
+        "map_01.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}

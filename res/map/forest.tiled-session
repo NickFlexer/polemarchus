@@ -1,0 +1,62 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "forest_map.tmx": {
+            "expandedObjectLayers": [
+                3,
+                4
+            ],
+            "scale": 0.6845,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 618.6997808619429,
+                "y": 203.06793279766254
+            }
+        },
+        "forest_map.tmx#Autotile_Dirt": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmx#Tileset": {
+            "scaleInDock": 1
+        },
+        "forest_map.tmx#sewer": {
+            "scaleInDock": 3.3144
+        },
+        "sewer_01.tmx": {
+            "scale": 0.559,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 319.32021466905184,
+                "y": 513.416815742397
+            }
+        },
+        "sewer_01.tmx#sewer": {
+            "scaleInDock": 1.712
+        }
+    },
+    "last.exportedFilePath": "/Users/nikolaykomarov/code/love/polemarchus/res/map",
+    "last.imagePath": "/Users/nikolaykomarov/code/love/polemarchus/res/map/tileset",
+    "map.height": 40,
+    "map.lastUsedExportFilter": "Lua files (*.lua)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 60,
+    "openFiles": [
+    ],
+    "project": "forest.tiled-project",
+    "recentFiles": [
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
