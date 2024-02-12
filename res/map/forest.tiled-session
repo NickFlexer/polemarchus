@@ -5,6 +5,7 @@
     },
     "activeFile": "",
     "expandedProjectPaths": [
+        "."
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
@@ -16,8 +17,8 @@
             "scale": 0.6845,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 618.6997808619429,
-                "y": 203.06793279766254
+                "x": 479.18188458728997,
+                "y": 311.90650109569026
             }
         },
         "forest_map.tmx#Autotile_Dirt": {
@@ -30,15 +31,18 @@
             "scaleInDock": 3.3144
         },
         "sewer_01.tmx": {
-            "scale": 0.559,
-            "selectedLayer": 3,
+            "expandedObjectLayers": [
+                3
+            ],
+            "scale": 5.6056,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 319.32021466905184,
-                "y": 513.416815742397
+                "x": 451.51277294134434,
+                "y": 161.80248323105465
             }
         },
         "sewer_01.tmx#sewer": {
-            "scaleInDock": 1.712
+            "scaleInDock": 2.9162
         }
     },
     "last.exportedFilePath": "/Users/nikolaykomarov/code/love/polemarchus/res/map",
@@ -53,6 +57,8 @@
     ],
     "project": "forest.tiled-project",
     "recentFiles": [
+        "sewer_01.tmx",
+        "forest_map.tmx"
     ],
     "tileset.embedInMap": true,
     "tileset.tileSize": {
