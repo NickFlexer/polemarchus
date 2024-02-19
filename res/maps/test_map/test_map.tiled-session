@@ -1,0 +1,68 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "sewer_corridor.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "sewer_corridor.tmx": {
+            "expandedObjectLayers": [
+                4,
+                5,
+                6,
+                7
+            ],
+            "scale": 2.0319,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 240.90752497662288,
+                "y": 182.09557556966388
+            }
+        },
+        "sewer_corridor.tmx#sewer_tiles": {
+            "scaleInDock": 1
+        },
+        "sewer_test.tmx": {
+            "expandedObjectLayers": [
+                4,
+                5,
+                6
+            ],
+            "scale": 2.3708,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 563.31196220685,
+                "y": 181.79517462459927
+            }
+        },
+        "sewer_test.tmx#sewer_tiles": {
+            "scaleInDock": 2.6144
+        }
+    },
+    "last.exportedFilePath": "/Users/nikolaykomarov/code/love/polemarchus/res/maps/test_map",
+    "last.imagePath": "/Users/nikolaykomarov/code/love/polemarchus/res/tileset",
+    "map.height": 30,
+    "map.lastUsedExportFilter": "All Files (*)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 60,
+    "openFiles": [
+        "sewer_test.tmx",
+        "sewer_corridor.tmx"
+    ],
+    "project": "test_map.tiled-project",
+    "property.type": "int",
+    "recentFiles": [
+        "sewer_test.tmx",
+        "sewer_corridor.tmx"
+    ],
+    "tileset.embedInMap": true,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
