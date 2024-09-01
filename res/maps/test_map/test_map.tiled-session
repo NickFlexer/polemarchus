@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "sewer_corridor.tmx",
+    "activeFile": "sewer_test.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -11,35 +11,57 @@
         "sewer_corridor.tmx": {
             "expandedObjectLayers": [
                 4,
-                5,
                 6,
+                5,
                 7
             ],
-            "scale": 2.0319,
-            "selectedLayer": 4,
+            "scale": 2.8059,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 240.90752497662288,
-                "y": 182.09557556966388
+                "x": 535.1224206137069,
+                "y": 282.9751594853701
             }
         },
         "sewer_corridor.tmx#sewer_tiles": {
-            "scaleInDock": 1
+            "scaleInDock": 0.7757
+        },
+        "sewer_hall.tmx": {
+            "scale": 2.0919,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 553.8027630383862,
+                "y": 297.8153831445098
+            }
+        },
+        "sewer_hall.tmx#AH_Tileset": {
+            "scaleInDock": 3.4869
+        },
+        "sewer_hall.tmx#sewer_1": {
+            "scaleInDock": 2.4935
         },
         "sewer_test.tmx": {
             "expandedObjectLayers": [
                 4,
-                5,
-                6
+                6,
+                5
             ],
-            "scale": 2.3708,
+            "scale": 1.603,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 563.31196220685,
-                "y": 181.79517462459927
+                "x": 465.0655021834061,
+                "y": 174.04865876481594
             }
         },
         "sewer_test.tmx#sewer_tiles": {
             "scaleInDock": 2.6144
+        },
+        "untitled.tmx": {
+            "scale": 0.7055729166666667,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 420.93452424891126,
+                "y": 240.9389532737876
+            }
         }
     },
     "last.exportedFilePath": "/Users/nikolaykomarov/code/love/polemarchus/res/maps/test_map",
@@ -52,13 +74,16 @@
     "map.width": 60,
     "openFiles": [
         "sewer_test.tmx",
-        "sewer_corridor.tmx"
+        "sewer_corridor.tmx",
+        "sewer_hall.tmx"
     ],
     "project": "test_map.tiled-project",
     "property.type": "int",
     "recentFiles": [
+        "sewer_hall.tmx",
+        "sewer_corridor.tmx",
         "sewer_test.tmx",
-        "sewer_corridor.tmx"
+        "untitled.tmx"
     ],
     "tileset.embedInMap": true,
     "tileset.tileSize": {

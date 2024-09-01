@@ -4,8 +4,8 @@ local Camera = require "Camera"
 local anim8 = require "anim8"
 
 local Position = require "game.components.position"
-local Player = require "game.components.player"
 local Drawable = require "game.components.drawable"
+local Focus = require "game.components.focus"
 
 local Settings = require "data.settings"
 
@@ -17,22 +17,25 @@ function ViewSystem:initialize(data)
 
     self.engine = data.engine
     self.ai_system = data.ai_system
+    self.game_logic = data.game_logic
 
     self.map = nil
-    self.follow_entity = nil
 
     self.camera = Camera()
     self.camera.scale = 2
     self.camera:setFollowLerp(0.2)
-    self.camera:setFollowStyle("TOPDOWN")
+    self.camera:setFollowStyle("TOPDOWN_TIGHT")
 end
 
 function ViewSystem:update(dt)
-    local player = self.follow_entity
-    self.camera:follow(player:get(Position.name):get_x(), player:get(Position.name):get_y())
+    for _, focus in pairs(self.targets.focus_points) do
+        local follow_x, follow_y = focus:get(Position.name):get()
+        self.camera:follow(follow_x, follow_y)
+    end
+
     self.camera:update(dt)
 
-    for _, entity in pairs(self.targets) do
+    for _, entity in pairs(self.targets.drawable) do
         if not entity:get(Drawable.name):is_moving() then
             entity:get(Drawable.name):get_anim():gotoFrame(entity:get(Drawable.name):get_stand_frame())
         end
@@ -47,7 +50,7 @@ function ViewSystem:draw()
     self.map:drawLayer(self.map.layers["ground"])
     self.map:drawLayer(self.map.layers["items"])
 
-    for _, entity in pairs(self.targets) do
+    for _, entity in pairs(self.targets.drawable) do
         entity:get(Drawable.name):get_anim():draw(
             entity:get(Drawable.name):get_spritesheet(),
             entity:get(Position.name):get_x(),
@@ -67,32 +70,30 @@ function ViewSystem:draw()
 end
 
 function ViewSystem:requires()
-    return {Drawable.name}
+    return {drawable = {Drawable.name}, focus_points = {Focus.name}}
 end
 
-function ViewSystem:onAddEntity(entity)
-    local animation_data = entity:get(Drawable.name):get_raw_data()
+function ViewSystem:onAddEntity(entity, group)
+    if group == "drawable" and entity:has(Drawable.name) then
+        local animation_data = entity:get(Drawable.name):get_raw_data()
 
-    local grid = anim8.newGrid(
-        Settings.tile_size,
-        Settings.tile_size,
-        animation_data.sprite_sheet:getWidth(),
-        animation_data.sprite_sheet:getHeight()
-    )
+        local grid = anim8.newGrid(
+            Settings.tile_size,
+            Settings.tile_size,
+            animation_data.sprite_sheet:getWidth(),
+            animation_data.sprite_sheet:getHeight()
+        )
 
-    entity:get(Drawable.name):set_grid(grid)
+        entity:get(Drawable.name):set_grid(grid)
 
-    local animations = {}
+        local animations = {}
 
-    for key, value in pairs(animation_data.animation_data) do
-        animations[key] = anim8.newAnimation(grid(value.frames[1], value.frames[2]), value.durations)
-    end
+        for key, value in pairs(animation_data.animation_data) do
+            animations[key] = anim8.newAnimation(grid(value.frames[1], value.frames[2]), value.durations)
+        end
 
-    entity:get(Drawable.name):set_animations(animations)
-    entity:get(Drawable.name):set_anim(entity:get(Drawable.name):get_default_anim())
-
-    if entity:get(Player.name) then
-        self.follow_entity = entity
+        entity:get(Drawable.name):set_animations(animations)
+        entity:get(Drawable.name):set_anim(entity:get(Drawable.name):get_default_anim())
     end
 end
 

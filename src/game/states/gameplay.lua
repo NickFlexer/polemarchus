@@ -11,6 +11,7 @@ local Player = require "game.components.player"
 local Drawable = require "game.components.drawable"
 local Collider = require "game.components.collider"
 local Brain = require "game.components.brain"
+local Focus = require "game.components.focus"
 
 local CreatureGenerator = require "data.creature_generator"
 
@@ -23,11 +24,18 @@ local Gameplay = class("Gameplay")
 
 function Gameplay:initialize(data)
     self.event_manager = data.event_manager
+    self.game_logic = data.game_logic
 
     self.engine = Engine()
 
     self.ai_system = AISystem()
-    self.view_system = ViewSystem({engine = self.engine, ai_system = self.ai_system})
+    self.view_system = ViewSystem(
+        {
+            engine = self.engine,
+            ai_system = self.ai_system,
+            game_logic = self.game_logic
+        }
+    )
 
     self.engine:addSystem(self.view_system, "update")
     self.engine:addSystem(self.ai_system, "update")
@@ -43,7 +51,7 @@ end
 function Gameplay:enter(owner)
     self:_register_components()
 
-    local level = owner:get_current_level()
+    local level = self.game_logic:get_level_data()
 
     self.view_system:set_map(level:get_map())
     self.ai_system:set_map(level)
@@ -59,6 +67,7 @@ function Gameplay:enter(owner)
             player:add(Player())
             player:add(Drawable(self.creature_generator:get_creature(Creatures.player)))
             player:add(Collider({class = ColliderClasses.player, type = ColliderTypes.moving, speed = 150}))
+            player:add(Focus())
 
             self.engine:addEntity(player)
         end
@@ -153,11 +162,20 @@ function Gameplay:exit(owner)
 end
 
 function Gameplay:_register_components()
-    Component.register(Position)
-    Component.register(Player)
-    Component.register(Drawable)
-    Component.register(Collider)
-    Component.register(Brain)
+    for _, component in pairs(self:_components()) do
+        Component.register(component)
+    end
+end
+
+function Gameplay:_components()
+    return {
+        Position,
+        Player,
+        Drawable,
+        Collider,
+        Brain,
+        Focus
+    }
 end
 
 return Gameplay
